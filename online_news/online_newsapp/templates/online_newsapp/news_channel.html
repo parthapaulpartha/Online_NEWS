@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="bg-secondary">
+        <div class="container"><br>
+            <h2 class="text-center  ">News Channels</h2><hr class="bg-dark">
+            <div class="row">
+                {% for n in n_channel %}
+                    <div class="col">
+                        <div class="card" style="width: 12rem;">
+                            <a href="{{ n.link}}" target="_blank">
+                                <img src="{{ n.image.url }}"  style=" height:70px" class="card-img-top" alt="...">
+                            </a>
+                          <div class="card-footer" style="height: 60px ;">
+                            <p class="text-center">{{n.name}}</p>
+                          </div>
+                        </div><br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div><br><br>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="bg-secondary">
+        <div class="container "><br>
+            <h2 class="text-center">Bangla Newspapers</h2><hr class="bg-dark">
+            <div class="row">
+                {% for b in b_news %}
+                    <div class="col">
+                        <div class="card" style="width: 12rem;">
+                            <a href="{{ b.link}}" target="_blank">
+                                <img src="{{ b.image.url }}"  style=" height:70px" class="card-img-top" alt="...">
+                            </a>
+                          <div class="card-footer" style="height: 50px ;">
+                            <p class="text-center">{{b.name}}</p>
+                          </div>
+                        </div><br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

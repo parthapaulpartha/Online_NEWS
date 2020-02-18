@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+      <style>
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block body %}
+  <!--  slider start -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="{% static 'images/n1.jpg' %}" style="height:370px;" alt="First slide">
+            <div class="centered text-white">
+              <h2><i class="fas fa-newspaper"></i> Online NEWS</h2>
+              <p class=" text-center">See all news here</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'images/n2.jpg' %}" style="height:370px;" alt="First slide">
+            <div class="centered text-white">
+              <h2><i class="fas fa-newspaper"></i> Online NEWS</h2>
+              <p class=" text-center">See all news here</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'images/n3.jpg' %}" style="height:370px;" alt="Third slide">
+            <div class="centered text-white">
+              <h2><i class="fas fa-newspaper"></i> Online NEWS</h2>
+              <p class=" text-center">See all news here</p>
+            </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  <!--  end slider-->
+
+    <!--view magazine-->
+    <div class="bg-dark"><br>
+        <div class="container ">
+            <h3 class="text-center text-white">Magazines</h3><hr class="bg-white">
+            <div class="row">
+                {% for m in magazine %}
+                    <div class="col">
+                        <div class="card" style="width: 15.7rem;">
+                            <a href="{{ m.link}}" target="_blank">
+                                <img src="{{ m.image.url }}"  style=" height:70px" class="card-img-top" alt="...">
+                            </a>
+                          <div class="card-footer" style="height: 50px ;">
+                            <p class="text-center">{{m.name}}</p>
+                          </div>
+                        </div><br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--End magazine-->
+
+    <!--view job-->
+    <div class="bg-secondary"><br>
+        <div class="container ">
+            <h3 class="text-center text-white">Job Websites</h3><hr class="bg-white">
+            <div class="row">
+                {% for j in job %}
+                    <div class="col">
+                        <div class="card" style="width: 15.7rem;">
+                            <a href="{{ j.link}}" target="_blank">
+                                <img src="{{ j.image.url }}"  style=" height:70px" class="card-img-top" alt="...">
+                            </a>
+                          <div class="card-footer" style="height: 50px ;">
+                            <p class="text-center">{{j.name}}</p>
+                          </div>
+                        </div><br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--End job-->
+
+    <!--view indian news-->
+    <div class="bg-dark"><br>
+        <div class="container ">
+            <h3 class="text-center text-white">Indian Bangla Newspaper</h3><hr class="bg-white">
+            <div class="row">
+                {% for i in i_b_news %}
+                    <div class="col">
+                        <div class="card" style="width: 15.7rem;">
+                            <a href="{{ i.link}}" target="_blank">
+                                <img src="{{ i.image.url }}"  style=" height:70px" class="card-img-top" alt="...">
+                            </a>
+                          <div class="card-footer" style="height: 50px ;">
+                            <p class="text-center">{{i.name}}</p>
+                          </div>
+                        </div><br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!--End -->
+
+
+    <!--    About us start-->
+        <div class="bg-secondary"><br>
+            <div class="container">
+                <h3 class="text-center">About Us</h3><hr class="bg-dark">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2><i class="fas fa-door-open"></i></h2>
+                        <h5>Open</h5>
+                        <p>24/7 hours you can read and see all news.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-newspaper"></i></h2>
+                        <h5>Type of News</h5>
+                        <p>All kind of Newspaper and News channel are available here.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-users"></i></h2>
+                        <h5>Use</h5>
+                        <p>This site are very easy to use. Any kind of user can use that site.</p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="fas fa-shield-alt"></i></h2>
+                        <h5>Security</h5>
+                        <p>This site have best security, so don't need to worry about that. .
+                        </p>
+                    </div>
+                    <div class="col text-center">
+                        <h2><i class="far fa-money-bill-alt"></i></h2>
+                        <h5>No Payment</h5>
+                        <p>This site is always free for Newspaper and News Channel.
+                        </p>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    <!--    About us End-->
+
+  <!--    Footer start -->
+    <div class="bg-dark">
+            <div class="container"><br>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <h3 class="text-muted"><i class="fas fa-newspaper"></i> Online NEWS</h3>
+                            <h6 class="text-muted"> made by SR Paul</h6>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <h6 class="text-muted"><i class="fas fa-mobile-alt"></i> Phone:  01701328022</h6>
+                            <h6 class="text-muted"><i class="fas fa-at"></i> Email:  online_news@gmail.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!--    Footer End-->
+{% endblock %}
